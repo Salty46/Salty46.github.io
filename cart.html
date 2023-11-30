@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Apex Sim Racing Setups - Cart</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/logo.png" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Ubuntu:wght@400;500&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+<div id="spinner" class="bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-none align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<!-- Spinner End -->
+
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary">
+                <img src="img/logo.png" alt="Apex Racing Setups Logo" class="me-3"style="max-width: 100px;">
+                Apex Racing Setups
+            </h2>
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link">Ready To Buy Setups</a>
+                <a href="team.html" class="nav-item nav-link">Tailor Make Setups</a> <!-- Added Cart Link -->
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Cart Page Content Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-12 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="bg-light p-4">
+                        <h2 class="fw-bold mb-4">Your Shopping Cart</h2>
+                        <!-- Cart items and details can be added here -->
+                        <p>Oops it looks like we had an issue with adding the item to the cart. Try again later or check the status of our site at: <a href="status.html" class="statusbtn">Status<i class="fa fa-arrow-right ms-3"></i></a></p>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cart Page Content End -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Place this script inside the <head> or at the end of the <body> -->
+       <!-- Your other script tags and links -->
+
+<!-- Updated main.js script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Function to display selected setups in the cart
+        function displaySelectedSetups() {
+            const selectedSetups = JSON.parse(localStorage.getItem('selectedSetups')) || [];
+            console.log('Selected setups:', selectedSetups); // Added console.log
+            const cartInfoDiv = document.getElementById('cartInfo');
+
+            cartInfoDiv.innerHTML = '<h2>Selected Setups</h2>';
+
+            if (selectedSetups.length > 0) {
+                selectedSetups.forEach((setup, index) => {
+                    const setupDiv = document.createElement('div');
+                    setupDiv.innerHTML = `
+                        <div class="selected-setup">
+                            <p class="setup-info">
+                                <strong>Car:</strong> ${setup.car} │ 
+                                <strong>Track:</strong> ${setup.track} │ 
+                                <strong>Creator:</strong> ${setup.creator} │ 
+                                <strong>Date:</strong> ${setup.date}
+                            </p>
+                        </div>
+                    `;
+                    cartInfoDiv.appendChild(setupDiv);
+                });
+            } else {
+                cartInfoDiv.innerHTML += '<p>No setups selected.</p>';
+            }
+        }
+
+        // Call this function when the cart page loads
+        window.onload = function () {
+            displaySelectedSetups();
+        };
+        function addToCart(car, track, creator, option, date) {
+            const selectedSetups = JSON.parse(localStorage.getItem('selectedSetups')) || [];
+            selectedSetups.push({ car, track, creator, option, date });
+            localStorage.setItem('selectedSetups', JSON.stringify(selectedSetups));
+            console.log('Setup added to cart!', selectedSetups);
+
+            // Display a success message or handle redirection to the cart page
+            alert('Setup added to cart successfully!'); // You can customize this alert or add your logic
+        }
+
+        // Function to handle error when adding to cart
+        function handleAddToCartError() {
+            const errorMessage = `
+                <div class="error-container">
+                    <p class="cart-error-message">
+                        Oops, it looks like we had an issue with adding the item to the cart. 
+                        Try again later or check the status of our site at:
+                        <a href="about.html" class="statusbtn">Status<i class="fa fa-arrow-right ms-3"></i></a>
+                    </p>
+                </div>
+            `;
+
+            // Append the error message to a specific div or display it where needed
+            const errorContainer = document.getElementById('errorContainer');
+            errorContainer.innerHTML = errorMessage;
+        }
+
+        // Event listeners for dropdown change
+        document.getElementById('carDropdown').addEventListener('change', showCarAndTrackInfo);
+        document.getElementById('trackDropdown').addEventListener('change', showCarAndTrackInfo);
+
+        // Additional event listener for showing setup options if both car and track are selected
+        document.getElementById('trackDropdown').addEventListener('change', function () {
+            showTrackInfo();
+            showSetupOptionsIfValidSelection();
+        });
+
+        // Additional event listener for showing setup options if both car and track are selected
+        function showSetupOptionsIfValidSelection() {
+            const selectedCar = document.getElementById('carDropdown').value;
+            const selectedTrack = document.getElementById('trackDropdown').value;
+            const setupInfoDiv = document.getElementById('setupInfo');
+
+            // Check if both car and track are selected
+            if (selectedCar !== 'Choose a car' && selectedTrack !== 'Choose a track') {
+                showSetupOptions();
+            } else {
+                // Clear setup options if either car or track is not selected
+                setupInfoDiv.innerHTML = '';
+            }
+        }
+    });
+        // ... (your existing code)
+    
+</script>
+
+      
+    <!-- Your existing footer code remains unchanged -->
+    <script src="js/main.js"></script>  
+ </body>
+
+</html>
