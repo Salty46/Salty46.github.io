@@ -1,0 +1,575 @@
+/********** Template CSS **********/
+:root {
+    --primary: #880000;  /* Set the overall light gray color */
+    --secondary: #242424; /* Set the greenish-gray color */
+    --light: #ffffff;     /* Set the light gray color */
+    --dark: #111111;      /* Set the dark color */
+}
+
+body {
+    color: #ffffff; /* Set text color to white */
+    background-color: #ffffff;;
+}
+body {
+    overflow-x: hidden; /* This will hide horizontal scroll */
+}
+
+
+.fw-medium {
+    font-weight: 600 !important;
+}
+#carImageContainer img {
+    max-width: 100%;
+    background-color: #ffffff;
+    height: auto;
+    max-height: 250px; /* Increase the maximum height for the car image */
+    border-radius: 8px; /* Add border-radius for a rounded appearance */
+    margin-top: 20px; /* Add margin at the top for spacing */
+    margin-left: 50px; /* Adjust margin to move the image to the right */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+#trackImageContainer img {
+    max-width: 100%;
+    background-color: #ffffff;
+    height: auto;
+    max-height: 200px; /* Set the maximum height for the images */
+    border-radius: 8px; /* Add border-radius for a rounded appearance */
+    margin-top: 20px; /* Add margin at the top for spacing */
+    margin-left: 50px; /* Adjust margin to move images to the right */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+/*** Spinner ***/
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/*** Button ***/
+.btn {
+    font-weight: 500;
+    text-transform: uppercase;
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFFFF;
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 2px;
+}
+
+
+/*** Navbar ***/
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    background-color: #ffffff;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: var(--primary);
+}
+
+@media (max-width: 991.98px) {
+    .navbar-light .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-light .navbar-brand,
+.navbar-light a.btn {
+    height: 75px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+.navbar-light.sticky-top {
+    top: -100px;
+    transition: .5s;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        border: none;
+        margin-top: 0;
+        top: 150%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        top: 100%;
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+
+/*** Header ***/
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 1;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 10%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 3rem;
+    height: 3rem;
+}
+
+@media (max-width: 768px) {
+    #header-carousel .carousel-item {
+        position: relative;
+        min-height: 450px;
+    }
+    
+    #header-carousel .carousel-item img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.page-header {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.page-header-inner {
+    background: rgba(0, 0, 0, .7);
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: var(--light);
+}
+
+
+/*** Facts ***/
+.fact {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/aus.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/*** Service ***/
+.service .nav .nav-link {
+    background: var(--light);
+    transition: .5s;
+}
+
+.service .nav .nav-link.active {
+    background: var(--primary);
+}
+
+.service .nav .nav-link.active h4 {
+    color: #FFFFFF !important;
+}
+
+
+/*** Booking ***/
+.booking {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/carousel-bg-2.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.bootstrap-datetimepicker-widget.bottom {
+    top: auto !important;
+}
+
+.bootstrap-datetimepicker-widget .table * {
+    border-bottom-width: 0px;
+}
+
+.bootstrap-datetimepicker-widget .table th {
+    font-weight: 500;
+}
+
+.bootstrap-datetimepicker-widget.dropdown-menu {
+    padding: 10px;
+    border-radius: 2px;
+}
+
+.bootstrap-datetimepicker-widget table td.active,
+.bootstrap-datetimepicker-widget table td.active:hover {
+    background: var(--primary);
+}
+
+.bootstrap-datetimepicker-widget table td.today::before {
+    border-bottom-color: var(--primary);
+}
+
+
+/*** Team ***/
+.team-item .team-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    transform: scale(0);
+    transition: .5s;
+}
+
+.team-item:hover .team-overlay {
+    transform: scale(1);
+}
+
+.team-item .team-overlay .btn {
+    color: var(--primary);
+    background: #FFFFFF;
+}
+
+.team-item .team-overlay .btn:hover {
+    color: #FFFFFF;
+    background: var(--secondary)
+}
+
+
+/*** Testimonial ***/
+.testimonial-carousel .owl-item .testimonial-text,
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text {
+    background: var(--primary) !important;
+}
+
+.testimonial-carousel .owl-item.center .testimonial-text * {
+    color: #FFFFFF !important;
+}
+
+.testimonial-carousel .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.testimonial-carousel .owl-dot {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    width: 15px;
+    height: 15px;
+    border: 1px solid #CCCCCC;
+    transition: .5s;
+}
+
+.testimonial-carousel .owl-dot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+
+/*** Footer ***/
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, .9), rgba(0, 0, 0, .9)), url(../img/The-Porsche-963-is-confirmed-for-iRacing-2023-Season-4.jpg) center center no-repeat;
+    background-size: cover;
+}
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light);
+    border: 1px solid #FFFFFF;
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    color: var(--primary);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: var(--light);
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .3);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
+
+/* Car and Track Selection Styles */
+/* Car and Track Selection Styles */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.container-flex {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 20px;
+}
+.container-flex .car-selection,
+.container-flex .track-selection {
+    width: 100%; /* Full width for individual selections */
+    margin-right: 0; /* Remove right margin for individual selections */
+}
+.track-selection label {
+    margin-right: 10px; /* Add some spacing between the text and the dropdown */
+}
+.track-selection label::after {
+    white-space: nowrap;
+    content: ": ";
+}
+.dropdown float-left{
+    height: 100%;
+    width: 200px;
+}
+
+.track-selection {
+    height: 100%;
+    width: 200px;
+}
+/* Add margin to the dropdown to separate it from the text */
+.track-selection select {
+    margin-top: 10px;
+}
+.dropdown {
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+.container {
+    padding: 20px; /* Adjust padding as needed */
+}
+.container-xxl {
+    max-width: none; /* Allow the container to extend the full width */
+    background-color: background-color #ffffff;
+    color: #949494;
+}
+
+/* Style for Car Selection */
+.container.float-left,
+.container.float-right {
+    width: 50%;
+    float: left;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.upcon {
+    background-color: #D81324;
+    color: #7c7c7c !important; /* Set the desired grey color with !important */
+    margin-bottom: 100px;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Style for Track Selection */
+
+/* Adjustments for smaller screens, if needed */
+@media (max-width: 767.98px) {
+    .container.float-left,
+    .container.float-right {
+        width: 100%;
+        float: none;
+        padding: 0;
+        background-color: #ffffff;
+    }
+}
+@media (max-width: 767.98px) {
+    .container {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+.setup-option {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left */
+    justify-content: space-between;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left; /* Align text to the left */
+}
+
+.setup-container {
+    background-color: #ffffff; /* Red background color */
+    padding: 20px; /* Adjust padding as needed */
+    margin-top: 20px; /* Adjust margin as needed */
+}
+
+/* Additional styling for the setup information */
+.setup-info {
+    color: white;
+}
+
+.setup-info img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.setup-content {
+    flex-grow: 1;
+    color: grey;
+}
+
+
+.setup-option {
+    display: flex;
+    flex-direction: column; /* Change to column layout */
+    align-items: center; /* Center text horizontally */
+    justify-content: space-between; /* Add space between text and button */
+    padding: 20px; /* Increase padding for more height */
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text within the div */
+}
+.setup-option .setup-content {
+    margin: 10px 0; /* Add margin between text and button */
+}
+
+/* Style for "Baseline" category */
+.setup-option.baseline {
+    background-color: #D81324;
+    border: 1px solid #D81324;
+    color: #FFFFFF;
+}
+.img-fluid  {
+    width: 800px;
+}
+
+.setup-option.pro {
+    background-color: #0B2154;
+    border: 1px solid #0B2154;
+    color: #FFFFFF;
+}
+
+.setup-option button {
+    background-color: #ffffff; /* White background */
+    color: #D81324; /* Red text color */
+    border: 1px solid #D81324; /* Red border */
+    border-radius: 8px;
+    width: 500px; /* Full width of the container */
+    font-size: 20px;
+    height: 40px;
+    padding: 5px; /* Adjust padding for a more compact button size */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Add smooth transition */
+}
+
+.setup-option button:hover {
+    background-color: #00ff08; /* Green on hover */
+    border-color: #009e05;
+}
