@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Status Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1f1f1f;
+            color: #ffffff;
+            text-align: center;
+            margin: 50px;
+        }
+
+        .status-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .status-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .status-item span {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        .green-ball,
+        .red-ball,
+        .purple-ball {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        .green-ball {
+            background-color: #5cb85c;
+        }
+
+        .red-ball {
+            background-color: #d9534f;
+        }
+
+        .purple-ball {
+            background-color: #9b59b6;
+        }
+
+        .green-text {
+            color: #5cb85c;
+        }
+
+        .red-text {
+            color: #d9534f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="status-container">
+        <div class="status-item">
+            <span>Home page:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+        <div class="status-item">
+            <span>About page:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+        <div class="status-item">
+            <span>Tailor Made Setups Shop:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+        <div class="status-item">
+            <span>Ready to Buy Setups Shop:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+        <div class="status-item">
+            <span>Newsletter:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+        <div class="status-item">
+            <span>Facebook:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+        <div class="status-item">
+            <span>Twitter:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+        <div class="status-item">
+            <span>Instagram:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+        <div class="status-item">
+            <span>YouTube:</span>
+            <div class="green-ball"></div>
+            <span class="green-text">Fully Functional</span>
+        </div>
+
+     
+        <div class="status-item">
+            <span>Cart:</span>
+            <div class="red-ball"></div>
+            <span class="red-text">Error with adding item to cart
+                <span class="countdown" id="countdown"></span>
+            </span>
+        </div>
+    </div>
+    <script>
+        // Set the date when the error occurred (you can replace this with the actual date)
+        const errorDate = new Date('2023-11-30T16:16:00Z');
+
+        // Function to update the countdown
+        function updateCountdown() {
+            const now = new Date();
+            const timeDifference = now - errorDate;
+
+            const seconds = Math.floor((timeDifference / 1000) % 60);
+            const minutes = Math.floor((timeDifference / 1000 / 60) % 60);
+            const hours = Math.floor((timeDifference / 1000 / 3600) % 24);
+            const days = Math.floor(timeDifference / (1000 * 3600 * 24));
+
+            document.getElementById('countdown').innerText = `(${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds)`;
+        }
+
+        // Update the countdown every second
+        setInterval(updateCountdown, 1000);
+
+        // Initial update
+        updateCountdown();
+    </script>
+</body>
+
+</html>
