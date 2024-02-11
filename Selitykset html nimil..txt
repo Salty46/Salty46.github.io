@@ -1,0 +1,9 @@
+Selitykset html nimil.
+
+team = tailor made
+
+service = ready to buy setups
+
+about = about
+
+syy tälle on ihan vaa se että template jota käytin käytti näitä enkä jaksanut vaihtaa ennenkun olin jo niin pitkällä koodissa että se veis vaa liikaa aikaa säätää ne takas

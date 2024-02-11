@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Apex Sim Setups - Sim Racing Setups</title>
+    <title>Apex Sim Racing Setups - Sim Racing Setups</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -44,8 +44,8 @@
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
             <h2 class="m-0 text-primary">
-                <img src="img/logo.png" alt="Apex Racing Setups Logo" class="me-3"style="max-width: 100px;">
-                Apex Racing Setups
+                <img src="img/logo.png" alt="Apex Racing Setups Logo" class="me-3" style="max-width: 100px;">
+                Apex Sim Racing Setups
             </h2>
             
         </a>
@@ -68,8 +68,8 @@
                 <h1 class="display-3 text-white mb-3 animated slideInDown">Setups</h1>
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb justify-content-center text-uppercase">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        
                         <li class="breadcrumb-item text-white active" aria-current="page">Setups</li>
                     </ol>
                 </nav>
@@ -88,7 +88,7 @@
             </div>
  
 
-    <!-- Service Start -->
+    <!-- Picker Start -->
     <div class="container">
         <div class="row">
             <div class="col-md-6">
@@ -103,7 +103,7 @@
             <div class="col-md-6">
                 <label for="trackDropdown">Select a Track:</label>
                 <select id="trackDropdown" onchange="showCarAndTrackInfo()" class="form-select">
-                    <!-- Track options will be populated here -->
+                   
                     <option value="Choose a track">Choose a track</option>
                 </select>
                 <div id="trackInfo"></div>
@@ -111,7 +111,7 @@
         </div>
 
         <div id="setupInfo">
-            <!-- Setup information will be displayed here -->
+            
         </div>
     </div>
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
@@ -168,7 +168,7 @@
     </div>
 <!-- Service End -->
 
-<!-- ... rest of your HTML ... -->
+
 
   <!-- JavaScript Libraries -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -460,30 +460,7 @@ function showSetupOptions() {
         setupInfoDiv.innerHTML += '<p>No setup options available for the selected car and track.</p>';
     }
     
-}
 
-    // Function to add a setup option to the cart
-   // Function to add a setup option to the cart and redirect to the cart page
-   function addToCart(car, track, creator, option, date) {
-        const selectedSetups = JSON.parse(localStorage.getItem('selectedSetups')) || [];
-        selectedSetups.push({ car, track, creator, option, date });
-        localStorage.setItem('selectedSetups', JSON.stringify(selectedSetups));
-        console.log('Setup added to cart!', selectedSetups); // Added console.log
-        alert('Setup added to cart!');
-    }
-    // Add the selected setup to the array
-    selectedSetups.push({ car, track, creator, option, date });
-
-    // Store the updated array in local storage
-    localStorage.setItem('selectedSetups', JSON.stringify(selectedSetups));
-
-    // You can also add additional logic related to adding to cart if needed
-
-
-// Call this function when you want to show setup options
-
-
-    // ... (remaining code)S
 
     // Event listeners for dropdown change
     document.getElementById('carDropdown').addEventListener('change', function () {
